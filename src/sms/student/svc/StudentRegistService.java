@@ -7,6 +7,7 @@ import java.util.Calendar;
 import java.sql.Date;
 import sms.student.dao.StudentDAO;
 import sms.student.vo.Student;
+import static sms.db.JdbcUtil.*;
 
 public class StudentRegistService {
 
@@ -17,8 +18,14 @@ public class StudentRegistService {
 	}
 	
 	public boolean searchStudent(int student_no) throws Exception{
+		boolean isRegisted = false;
+		Connection con = getConnection();
+		StudentDAO studentDAO = new StudentDAO(con);
+		Student student = studentDAO.selectStudent(student_no);
 		
-		
+		if(studentDAO != null) {
+			isRegisted = true;
+		}
 		return false;
 	}
 	

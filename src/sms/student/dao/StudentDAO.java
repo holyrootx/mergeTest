@@ -23,13 +23,13 @@ public class StudentDAO {
 	}
 
 	public ArrayList<Student> selectStudentList() throws Exception{
-
+		//전체조회
 		
 		return null;
 	}
 
 	public Student selectStudent(int student_no) throws Exception{
-
+		// 단일 학생 조회
 		
 		return null;
 	}

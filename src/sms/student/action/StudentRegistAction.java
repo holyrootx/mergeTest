@@ -12,7 +12,8 @@ public class StudentRegistAction implements Action {
 	
 	@Override
 	public void execute(Scanner sc) throws Exception{
-
+		int stu_no = consoleUtil.getStudent_no("", sc);
+		boolean isRegisted = studentRegistService.searchStudent(stu_no);
 		
 	}
 	
