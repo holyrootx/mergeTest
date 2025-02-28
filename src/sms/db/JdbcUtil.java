@@ -21,7 +21,7 @@ public class JdbcUtil {
 		
 		try {
 			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-			String id = "bookerd";
+			String id = "javaDB";
 			String pass = "1234";
 			con = DriverManager.getConnection(url,id,pass);
 			con.setAutoCommit(false);
@@ -34,7 +34,7 @@ public class JdbcUtil {
 
 	public static void close(ResultSet rs) {
 		try {
-			rs.close();
+			if(rs != null) rs.close();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
@@ -42,7 +42,7 @@ public class JdbcUtil {
 	
 	public static void close(Statement stmt) {
 		try {
-			stmt.close();
+			if(stmt != null) stmt.close();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
@@ -50,7 +50,7 @@ public class JdbcUtil {
 	
 	public static void close(Connection con) {
 		try {
-			con.close();
+			if(con != null) con.close();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
@@ -58,7 +58,7 @@ public class JdbcUtil {
 	
 	public static void commit(Connection con) {
 		try {
-			con.commit();
+			if(con != null) con.commit();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
@@ -66,7 +66,7 @@ public class JdbcUtil {
 	
 	public static void rollback(Connection con) {
 		try {
-			con.rollback();
+			if(con != null) con.rollback();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}

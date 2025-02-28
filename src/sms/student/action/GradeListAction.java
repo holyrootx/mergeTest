@@ -13,7 +13,10 @@ public class GradeListAction implements Action {
 	
 	@Override
 	public void execute(Scanner sc) throws Exception {
+		// 전체 조회
+		ArrayList<Grade> gradeList = gradeListService.getGradeList();
 		
+		consoleUtil.printGradeList(gradeList);
 		
 		
 		

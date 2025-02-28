@@ -10,7 +10,18 @@ public class StudentListService {
 	
 	public ArrayList<Student> getStudentList() throws Exception{
 
-		return null;
+		// 1. Connection
+		// DAO 연결
+		// dao 메서드 호출 후 결과 받아오기
+		// 결과 리턴하기
+		// 트랜잭션 처리 
+		// 
+		Connection con = getConnection();
+		StudentDAO memberDAO = new StudentDAO(con);
+		ArrayList<Student> studentList =  memberDAO.selectStudentList();
+		
+		close(con);
+		return studentList;
 	}
 	
 }

@@ -14,7 +14,14 @@ public class StudentListAction implements Action {
 	@Override
 	public void execute(Scanner sc) throws Exception {
 		
+		ArrayList<Student> studentList = studentListService.getStudentList();
 		
+		if(studentList != null) {
+			//조회 성공했으면
+			consoleUtil.printStudentList(studentList);
+		} else {
+			consoleUtil.printStudentListNotFound();
+		}
 	}
 	
 }

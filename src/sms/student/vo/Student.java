@@ -29,7 +29,7 @@ public class Student {
 		this.student_addr = student_addr;
 		this.student_tel = student_tel;
 		this.student_birth = student_birth;
-		this.age = calculateAge(student_birth);
+		this.age = calculateAge(student_birth); // 만나이 계산
 	}
 
 	private int calculateAge(String student_birth) {

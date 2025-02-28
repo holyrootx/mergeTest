@@ -9,8 +9,16 @@ import sms.student.vo.Grade;
 public class GradeListService {
 
 	public ArrayList<Grade> getGradeList() throws Exception{
+		// selectGradeList()
+		Connection con = getConnection();
+		GradeDAO gradeDAO = new GradeDAO(con);
 		
-		return null;
+		ArrayList<Grade> gradeList = new ArrayList<>();
+		
+		gradeList = gradeDAO.selectGradeList();
+		
+		con.close();
+		return gradeList;
 	}
 	
 }
