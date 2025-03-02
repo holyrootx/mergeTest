@@ -23,7 +23,7 @@ public class ScholarshipDAO {
 		Scholarship scholarship = null;
 		String sql = "SELECT scholar_name, scholar_percent, scholar_money"
 				+ " FROM scholarship"
-				+ " WHERE scholar_name LIKE '%' || ? || '%'";
+				+ " WHERE scholar_name = ? ";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, scholar_name);
@@ -173,15 +173,53 @@ public class ScholarshipDAO {
 	}
 
 	public int updateScholarship(Scholarship changeScholarship) throws Exception{
-
+		int updateCount = 0;	
+		PreparedStatement pstmt = null;
 		
-		return 0;
+		String sql = "UPDATE scholarship"
+				   + " SET scholar_percent = ?, scholar_money = ?"
+				   + " WHERE scholar_name = ?";
+		try {
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, changeScholarship.getScholar_percent());
+			pstmt.setInt(2, changeScholarship.getScholar_money());
+			pstmt.setString(3, changeScholarship.getScholar_name());
+			updateCount = pstmt.executeUpdate();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			pstmt.close();
+		}
+			
+		return updateCount;
+		
 	}
 
 	public int deleteScholarship(String scholar_name) throws Exception{
-
+		int deleteCount = 0;
+		PreparedStatement pstmt = null;
+		// DELETE FROM ���̺��
+		// WHERE [���ǽ�]
+		String sql = "DELETE FROM scholarship"
+				+ " WHERE scholar_name = ?";
 		
-		return 0;
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, scholar_name);
+			deleteCount = pstmt.executeUpdate();
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+			
+		}
+		
+		return deleteCount;
+
 	}
 	
 }

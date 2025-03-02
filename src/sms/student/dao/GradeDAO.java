@@ -269,10 +269,43 @@ public class GradeDAO {
 		
 	}
 
-	public ArrayList<Grade> selectGradeListAddPercent(int gradeListSize) throws Exception{
+	public ArrayList<Grade> selectGradeListAddPercent() throws Exception{
 		
-		
-		return null;
+		ArrayList<Grade> gradeListAddPercent = new ArrayList<>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT g.student_no,student_name,grade_kor,grade_eng, grade_math,"
+				+ " (grade_kor+grade_eng+grade_math) / 3 AS avg ,"
+				+ " RANK() OVER (ORDER BY (grade_kor+grade_eng+grade_math) DESC) / (SELECT COUNT(*) FROM grade) AS grade_percent"
+				+ " FROM grade g "
+				+ " JOIN student s "
+				+ " ON g.student_no = s.student_no";
+		Grade grade = null;
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				// GRADE 순서
+				// 
+				grade = new Grade(
+						rs.getInt("student_no"),
+						rs.getString("student_name"),
+						rs.getInt("grade_kor"),
+						rs.getInt("grade_eng"),
+						rs.getInt("grade_math"),
+						rs.getFloat("grade_percent")
+						);
+				
+				gradeListAddPercent.add(grade);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return gradeListAddPercent;			
+
 	}
 	
 }

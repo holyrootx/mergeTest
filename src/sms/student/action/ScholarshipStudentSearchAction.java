@@ -17,7 +17,31 @@ public class ScholarshipStudentSearchAction implements Action {
 	
 	@Override
 	public void execute(Scanner sc) throws Exception {
-				
+		String scholarship_name = consoleUtil.getScholar_name("학생이 받는 ", sc);
+		
+		Scholarship scholarship = scholarshipStudentSearchService.getSearchScholarship(scholarship_name);
+		
+		if (scholarship == null) {
+			consoleUtil.printScholarshipNotFound(scholarship_name);
+			return;
+		}
+		
+		ArrayList<Grade> scoreListAddPercent = scholarshipStudentSearchService.getScoreListAddPercent();
+		
+		if(scoreListAddPercent.size()  == 0) {
+			consoleUtil.printSearchGradeListNotFound();
+		} else {
+			consoleUtil.printGradeList(scoreListAddPercent);
+		}
+		
+		ArrayList<ScholarshipStudent> scholarshipStudentList = scholarshipStudentSearchService.getScholarshipStudentSearchList(scholarship,scoreListAddPercent);
+		
+		if(scholarshipStudentList.size() == 0) {
+			consoleUtil.printScholarshipStudentListNotFound();
+		} else {
+			consoleUtil.printScholarshipStudentList(scholarshipStudentList);
+		}
+		
 		
 	}
 }

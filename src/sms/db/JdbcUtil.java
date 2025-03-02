@@ -22,10 +22,9 @@ public class JdbcUtil {
 		try {
 			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 			String id = "javaDB";
-			String pass = "1234";
+			String pass = "javaDB";
 			con = DriverManager.getConnection(url,id,pass);
 			con.setAutoCommit(false);
-			System.out.println("연결성공");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

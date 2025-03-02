@@ -16,9 +16,9 @@ public class GradeModifyAction implements Action {
 		// �й� �޾Ƽ� getModifyStudent ����
 		Grade newGrade = gradeModifyService.getModifyGrade(student_no);
  
-		if(newGrade != null) {
+		if(newGrade == null) {
 			// �ش��ϴ� �л��� ���ٸ�
-			consoleUtil.printRegistedStudent(student_no);
+			consoleUtil.printStudentNotFound(student_no);
 			return;
 		}
 		// ������ �״�� ����

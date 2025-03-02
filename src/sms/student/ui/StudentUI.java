@@ -34,12 +34,12 @@ public class StudentUI {
 		StudentController studentController = new StudentController();
 		
 		do{
-			System.out.println("\n¦¡¦¡¦¡¦¡¦¡¦¡¦¡< ÇĞ»ıÁ¤º¸°ü¸® ÇÁ·Î±×·¥ >¦¡¦¡¦¨¦¡¦¡¦¡¦¡");
-			System.out.println("             1. ÇĞ»ıÁ¤º¸ °ü¸®              ¦¢ ");
-			System.out.println("             2. ¼ºÀûÁ¤º¸ °ü¸®             ¢¸¡â ");
-			System.out.println("             3. ÀåÇĞ±İ °ü¸®               ¡ä¢º");
-			System.out.println("             4. ÇÁ·Î±×·¥ Á¾·á                 ");
-			System.out.print("             ¼±ÅÃ : ");
+			System.out.println("\nâ”€â”€â”€â”€â”€â”€â”€< í•™ìƒì •ë³´ê´€ë¦¬ í”„ë¡œê·¸ë¨ >â”€â”€â”¬â”€â”€â”€â”€");
+			System.out.println("             1. í•™ìƒì •ë³´ ê´€ë¦¬              â”‚ ");
+			System.out.println("             2. ì„±ì ì •ë³´ ê´€ë¦¬             â—€â–³ ");
+			System.out.println("             3. ì¥í•™ê¸ˆ ê´€ë¦¬               â–½â–¶");
+			System.out.println("             4. í”„ë¡œê·¸ë¨ ì¢…ë£Œ                 ");
+			System.out.print("             ì„ íƒ : ");
 			outerMenu = sc.nextInt();
 			
 			isInnerStop = false;
@@ -48,14 +48,14 @@ public class StudentUI {
 			
 			case 1:
 				do{
-					System.out.println("\n¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡< ÇĞ»ıÁ¤º¸ °ü¸® >¦¡¦¡¦¡¦¡¦¨¦¡¦¡¦¡¦¡");
-					System.out.println("             1. ÇĞ»ıÁ¤º¸ ÀÔ·Â              ¦¢");
-					System.out.println("             2. ÇĞ»ıÁ¤º¸ Á¶È¸             ¡â¢º");
-					System.out.println("             3. ÇĞ»ıÁ¤º¸ °Ë»ö             ¢¸¡ä");
-					System.out.println("             4. ÇĞ»ıÁ¤º¸ º¯°æ                 ");
-					System.out.println("             5. ÇĞ»ıÁ¤º¸ »èÁ¦                 ");
-					System.out.println("             6. Ã¹ È­¸éÀ¸·Î                   ");
-					System.out.print("             ¼±ÅÃ : ");
+					System.out.println("\nâ”€â”€â”€â”€â”€â”€â”€â”€â”€< í•™ìƒì •ë³´ ê´€ë¦¬ >â”€â”€â”€â”€â”¬â”€â”€â”€â”€");
+					System.out.println("             1. í•™ìƒì •ë³´ ì…ë ¥              â”‚");
+					System.out.println("             2. í•™ìƒì •ë³´ ì¡°íšŒ             â–³â–¶");
+					System.out.println("             3. í•™ìƒì •ë³´ ê²€ìƒ‰             â—€â–½");
+					System.out.println("             4. í•™ìƒì •ë³´ ë³€ê²½                 ");
+					System.out.println("             5. í•™ìƒì •ë³´ ì‚­ì œ                 ");
+					System.out.println("             6. ì²« í™”ë©´ìœ¼ë¡œ                   ");
+					System.out.print("             ì„ íƒ : ");
 					innerMenu = sc.nextInt();
 					
 					switch (innerMenu) {
@@ -81,13 +81,13 @@ public class StudentUI {
 						break;
 						
 					case 6:
-						System.out.println("             Ã¹ È­¸éÀ¸·Î ÀÌµ¿ÇÕ´Ï´Ù.\n");
+						System.out.println("             ì²« í™”ë©´ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.\n");
 						isInnerStop = true;
 						action = null;
 						break;
 						
 					default:
-						System.out.println("             Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.\n");
+						System.out.println("             ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.\n");
 						action = null;
 						break;
 					}
@@ -100,14 +100,14 @@ public class StudentUI {
 				
 			case 2:
 				do{
-					System.out.println("\n¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡< ¼ºÀûÁ¤º¸ °ü¸® >¦¡¦¡¦¡¦¡¦¨¦¡¦¡¦¡¦¡");
-					System.out.println("             1. ¼ºÀûÁ¤º¸ ÀÔ·Â              ¦¢");
-					System.out.println("             2. ¼ºÀûÁ¤º¸ Á¶È¸             ¡â¢º           ");
-					System.out.println("             3. ¼ºÀûÁ¤º¸ °Ë»ö             ¢¸¡ä           ");
-					System.out.println("             4. ¼ºÀûÁ¤º¸ º¯°æ                  ");
-					System.out.println("             5. ¼ºÀûÁ¤º¸ »èÁ¦                  ");
-					System.out.println("             6. Ã¹ È­¸éÀ¸·Î                    ");
-					System.out.print("             ¼±ÅÃ : ");
+					System.out.println("\nâ”€â”€â”€â”€â”€â”€â”€â”€â”€< ì„±ì ì •ë³´ ê´€ë¦¬ >â”€â”€â”€â”€â”¬â”€â”€â”€â”€");
+					System.out.println("             1. ì„±ì ì •ë³´ ì…ë ¥              â”‚");
+					System.out.println("             2. ì„±ì ì •ë³´ ì¡°íšŒ             â–³â–¶           ");
+					System.out.println("             3. ì„±ì ì •ë³´ ê²€ìƒ‰             â—€â–½           ");
+					System.out.println("             4. ì„±ì ì •ë³´ ë³€ê²½                  ");
+					System.out.println("             5. ì„±ì ì •ë³´ ì‚­ì œ                  ");
+					System.out.println("             6. ì²« í™”ë©´ìœ¼ë¡œ                    ");
+					System.out.print("             ì„ íƒ : ");
 					innerMenu = sc.nextInt();
 					
 					switch (innerMenu) {
@@ -133,13 +133,13 @@ public class StudentUI {
 						break;
 					
 					case 6:
-						System.out.println("             Ã¹ È­¸éÀ¸·Î ÀÌµ¿ÇÕ´Ï´Ù.\n");
+						System.out.println("             ì²« í™”ë©´ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.\n");
 						isInnerStop = true;
 						action = null;
 						break;
 						
 					default:
-						System.out.println("             Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.\n");
+						System.out.println("             ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.\n");
 						action = null;
 						break;
 					}
@@ -152,15 +152,15 @@ public class StudentUI {
 				
 			case 3:
 				do{
-					System.out.println("\n¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡< ÀåÇĞ±İ °ü¸® >¦¡¦¡¦¡¦¡¦¡¦¨¦¡¦¡¦¡¦¡");
-					System.out.println("             1. ÀåÇĞ±İÁ¾·ù Ãß°¡            ¦¢");
-					System.out.println("             2. ÀåÇĞ±İÁ¾·ù Á¶È¸           ¡â¢º");
-					System.out.println("             3. ÀåÇĞ±İÁ¾·ù °Ë»ö           ¢¸¡ä");
-					System.out.println("             4. ÀåÇĞ±İÁ¾·ù º¯°æ               ");
-					System.out.println("             5. ÀåÇĞ±İÁ¾·ù »èÁ¦               ");
-					System.out.println("             6. ÀåÇĞ±İº° ¼öÇıÇĞ»ı °Ë»ö        ");
-					System.out.println("             7. Ã¹ È­¸éÀ¸·Î                  ");
-					System.out.print("             ¼±ÅÃ : ");
+					System.out.println("\nâ”€â”€â”€â”€â”€â”€â”€â”€â”€< ì¥í•™ê¸ˆ ê´€ë¦¬ >â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€");
+					System.out.println("             1. ì¥í•™ê¸ˆì¢…ë¥˜ ì¶”ê°€            â”‚");
+					System.out.println("             2. ì¥í•™ê¸ˆì¢…ë¥˜ ì¡°íšŒ           â–³â–¶");
+					System.out.println("             3. ì¥í•™ê¸ˆì¢…ë¥˜ ê²€ìƒ‰           â—€â–½");
+					System.out.println("             4. ì¥í•™ê¸ˆì¢…ë¥˜ ë³€ê²½               ");
+					System.out.println("             5. ì¥í•™ê¸ˆì¢…ë¥˜ ì‚­ì œ               ");
+					System.out.println("             6. ì¥í•™ê¸ˆë³„ ìˆ˜í˜œí•™ìƒ ê²€ìƒ‰        ");
+					System.out.println("             7. ì²« í™”ë©´ìœ¼ë¡œ                  ");
+					System.out.print("             ì„ íƒ : ");
 					innerMenu = sc.nextInt();
 					
 					switch (innerMenu) {
@@ -190,13 +190,13 @@ public class StudentUI {
 						break;
 					
 					case 7:
-						System.out.println("             Ã¹ È­¸éÀ¸·Î ÀÌµ¿ÇÕ´Ï´Ù.\n");
+						System.out.println("             ì²« í™”ë©´ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.\n");
 						isInnerStop = true;
 						action = null;
 						break;
 						
 					default:
-						System.out.println("             Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.\n");
+						System.out.println("             ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.\n");
 						action = null;
 						break;
 					}
@@ -208,12 +208,12 @@ public class StudentUI {
 				break;
 				
 			case 4:
-				System.out.println("             ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù. Bye~ Â¥ÀÌÂî¿£~\n");
+				System.out.println("             í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤. Bye~ ì§œì´ì°Œì—”~\n");
 				isOuterStop = true;
 				break;
 				
 			default:
-				System.out.println("             Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.\n");
+				System.out.println("             ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.\n");
 				break;
 			}
 		}while(!isOuterStop);

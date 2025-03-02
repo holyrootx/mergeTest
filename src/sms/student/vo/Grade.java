@@ -13,7 +13,7 @@ public class Grade {
 	
 	@Override
 	public String toString() {
-		return "ÇÐ¹ø : " + student_no + ", ÀÌ¸§ : " + student_name + ", ±¹¾îÁ¡¼ö : " + grade_kor + ", ¿µ¾îÁ¡¼ö : " + grade_eng + ", ¼öÇÐÁ¡¼ö : " + grade_math + ", ÃÑÁ¡ : " + total;	
+		return "ï¿½Ð¹ï¿½ : " + student_no + ", ï¿½Ì¸ï¿½ : " + student_name + ", ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + grade_kor + ", ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + grade_eng + ", ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + grade_math + ", ï¿½ï¿½ï¿½ï¿½ : " + total;	
 	}
 	
 	public Grade(int student_no, String student_name, int grade_kor,
@@ -53,7 +53,7 @@ public class Grade {
 	}
 	
 	private float calculatePercent(float percent) {
-		percent = (int)(percent * 10 + 0.5f) / 10f;
+		percent = (int)(percent * 1000 + 0.5f) / 1000f;
 		return percent;
 	}
 

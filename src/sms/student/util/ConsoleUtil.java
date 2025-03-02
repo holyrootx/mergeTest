@@ -9,35 +9,35 @@ import sms.student.vo.Student;
 
 public class ConsoleUtil {
 
-	//ÇĞ»ı °ü·Ã ÄÜ¼Ö À¯Æ¿
+	//í•™ìƒ ê´€ë ¨ ì½˜ì†” ìœ í‹¸
 
 	public void printRegistedStudent(int student_no) {
-		System.out.println("> ÇĞ¹ø : " + student_no + " ÇĞ»ıÀº ÀÌ¹Ì µî·ÏµÇ¾î ÀÖ½À´Ï´Ù.\n");
+		System.out.println("> í•™ë²ˆ : " + student_no + " í•™ìƒì€ ì´ë¯¸ ë“±ë¡ë˜ì–´ ìˆìŠµë‹ˆë‹¤.\n");
 	}
 
 	
 	public void printUnfitForm(String unfitForm) {
-		System.out.println("\n> »ı³â¿ùÀÏ : " + unfitForm + "ÀÌ Çü½Ä¿¡ ¸ÂÁö ¾Ê½À´Ï´Ù. (¿¹½Ã : 1988-06-15)");
+		System.out.println("\n> ìƒë…„ì›”ì¼ : " + unfitForm + "ì´ í˜•ì‹ì— ë§ì§€ ì•ŠìŠµë‹ˆë‹¤. (ì˜ˆì‹œ : 1988-06-15)");
 	}
 	
 	public Student getNewStudent(int student_no, Scanner sc) {
 		sc.useDelimiter(System.getProperty("line.separator"));
 
-		System.out.println("\n> »õ·Î¿î ÇĞ»ıÁ¤º¸ ÀÔ·Â");
+		System.out.println("\n> ìƒˆë¡œìš´ í•™ìƒì •ë³´ ì…ë ¥");
 
-		System.out.print("> ÀÌ¸§ : ");
+		System.out.print("> ì´ë¦„ : ");
 		String stu_name = sc.next();
 
-		System.out.print("> ÇĞ³â : ");
+		System.out.print("> í•™ë…„ : ");
 		int grade = sc.nextInt();
 
-		System.out.print("> ÁÖ¼Ò : ");
+		System.out.print("> ì£¼ì†Œ : ");
 		String address = sc.next();
 
-		System.out.print("> ÀüÈ­¹øÈ£ : ");
+		System.out.print("> ì „í™”ë²ˆí˜¸ : ");
 		String tel = sc.next();
 
-		System.out.print("> »ı³â¿ùÀÏ : ");
+		System.out.print("> ìƒë…„ì›”ì¼ : ");
 		String birth = sc.next();
 
 		return new Student(student_no, stu_name, grade, address, tel, birth);
@@ -45,12 +45,12 @@ public class ConsoleUtil {
 
 
 	public void printRegistSuccess(Student newStudent) {
-		System.out.println("> ÇĞ¹ø : " + newStudent.getStudent_no() + " ÇĞ»ıÀÇ Á¤º¸°¡ µî·ÏµÇ¾ú½À´Ï´Ù.\n");
+		System.out.println("> í•™ë²ˆ : " + newStudent.getStudent_no() + " í•™ìƒì˜ ì •ë³´ê°€ ë“±ë¡ë˜ì—ˆìŠµë‹ˆë‹¤.\n");
 	}
 
 
 	public void printRegistFail(Student newStudent) {
-		System.out.println("> ÇĞ¹ø : " + newStudent.getStudent_no() + " ÇĞ»ıÀÇ Á¤º¸ µî·ÏÀÌ ½ÇÆĞÇß½À´Ï´Ù.\n");
+		System.out.println("> í•™ë²ˆ : " + newStudent.getStudent_no() + " í•™ìƒì˜ ì •ë³´ ë“±ë¡ì´ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.\n");
 	}
 
 
@@ -72,13 +72,13 @@ public class ConsoleUtil {
 
 
 	public void printStudentList(ArrayList<Student> studentList) {
-		System.out.println("\n> ÃÑ " + studentList.size() + "¸íÀÇ ÇĞ»ıÀ» Á¶È¸ÇÕ´Ï´Ù.");
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢      [ÇĞ¹ø]     [ÀÌ¸§]     [ÇĞ³â]                         [ÁÖ¼Ò]                           [ÀüÈ­¹øÈ£]      [»ı³â¿ùÀÏ]   [¸¸³ªÀÌ] ¦¢");
+		System.out.println("\n> ì´ " + studentList.size() + "ëª…ì˜ í•™ìƒì„ ì¡°íšŒí•©ë‹ˆë‹¤.");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚      [í•™ë²ˆ]     [ì´ë¦„]     [í•™ë…„]                         [ì£¼ì†Œ]                           [ì „í™”ë²ˆí˜¸]      [ìƒë…„ì›”ì¼]   [ë§Œë‚˜ì´] â”‚");
 
 		for(int i=0 ; i<studentList.size() ; i++) {
 
-			System.out.print("¦¢" + (i+1) + ".");
+			System.out.print("â”‚" + (i+1) + ".");
 			for(int j=0 ; (Integer.toString(i+1).length() + j) < 4 ; j++) {
 				System.out.print(" ");
 			}
@@ -121,142 +121,142 @@ public class ConsoleUtil {
 				System.out.print(" ");
 			}
 
-			System.out.println("¦¢");
+			System.out.println("â”‚");
 
 		}
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
 	}
 
 	public void printStudentListNotFound() {
-		System.out.println("> µî·ÏµÈ ÇĞ»ıÁ¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");
+		System.out.println("> ë“±ë¡ëœ í•™ìƒì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
 	}
 
 	public int getSearchMenuNum(Scanner sc) {
-		System.out.println("\n¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬< ÇĞ»ıÁ¤º¸ °Ë»ö >¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬");
-		System.out.println("             1. ÀÌ¸§À¸·Î °Ë»ö                  ");
-		System.out.println("             2. ÇĞ¹øÀ¸·Î °Ë»ö                  ");
-		System.out.println("             3. ÇĞ³âÀ¸·Î °Ë»ö                  ");
-		System.out.println("             4. °Ë»ö Ãë¼Ò                      ");
-		System.out.print("             ¼±ÅÃ : ");
+		System.out.println("\nâ”â”â”â”â”â”â”â”â”< í•™ìƒì •ë³´ ê²€ìƒ‰ >â”â”â”â”â”â”â”â”â”");
+		System.out.println("             1. ì´ë¦„ìœ¼ë¡œ ê²€ìƒ‰                  ");
+		System.out.println("             2. í•™ë²ˆìœ¼ë¡œ ê²€ìƒ‰                  ");
+		System.out.println("             3. í•™ë…„ìœ¼ë¡œ ê²€ìƒ‰                  ");
+		System.out.println("             4. ê²€ìƒ‰ ì·¨ì†Œ                      ");
+		System.out.print("             ì„ íƒ : ");
 		return sc.nextInt();
 	}
 
 	public int getStudent_no(String msgKind, Scanner sc) {
-		System.out.print("\n> " + msgKind + "ÇĞ¹ø : ");
+		System.out.print("\n> " + msgKind + "í•™ë²ˆ : ");
 		return sc.nextInt();
 	}
 
 	public String getStudent_name(String msgKind, Scanner sc) {
-		System.out.print("\n> " + msgKind + "ÀÌ¸§ : ");
+		System.out.print("\n> " + msgKind + "ì´ë¦„ : ");
 		return sc.next();
 	}
 
 	public int getGrade(String msgKind, Scanner sc) {
-		System.out.print("\n> " + msgKind + "ÇĞ³â : ");
+		System.out.print("\n> " + msgKind + "í•™ë…„ : ");
 		return sc.nextInt();
 	}
 
 	public void printSearchStudentCancel() {
-		System.out.println("             ÇĞ»ıÁ¤º¸ °ü¸® È­¸éÀ¸·Î ÀÌµ¿ÇÕ´Ï´Ù.\n");
+		System.out.println("             í•™ìƒì •ë³´ ê´€ë¦¬ í™”ë©´ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.\n");
 
 	}
 
 	public void printSearchMenuNumWrong() {
-		System.out.println("             Àß¸ø ¼±ÅÃÇÏ¼Ì½À´Ï´Ù.\n");
+		System.out.println("             ì˜ëª» ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤.\n");
 	}
 
 	public void printSearchStudentListNotFound() {
-		System.out.println("> °Ë»öÁ¶°Ç¿¡ ÇØ´çÇÏ´Â ÇĞ»ıÁ¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");
+		System.out.println("> ê²€ìƒ‰ì¡°ê±´ì— í•´ë‹¹í•˜ëŠ” í•™ìƒì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
 	}
 
 	public void printStudentNotFound(int student_no) {
-		System.out.println("> ÇĞ¹ø : " + student_no + " ÇĞ»ıÀÇ Á¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");
+		System.out.println("> í•™ë²ˆ : " + student_no + " í•™ìƒì˜ ì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
 	}
 
 	public Student getChangeStudent(Student modifyStudent, Scanner sc) {
 		sc.useDelimiter(System.getProperty("line.separator"));
 
-		System.out.println("\n> º¯°æÇÒ ÇĞ»ı Á¤º¸ ÀÔ·Â");
+		System.out.println("\n> ë³€ê²½í•  í•™ìƒ ì •ë³´ ì…ë ¥");
 
-		System.out.println("±âÁ¸ÀÇ ÀÌ¸§ : " + modifyStudent.getStudent_name());
-		System.out.print("¼öÁ¤ÇÒ ÀÌ¸§ : ");
+		System.out.println("ê¸°ì¡´ì˜ ì´ë¦„ : " + modifyStudent.getStudent_name());
+		System.out.print("ìˆ˜ì •í•  ì´ë¦„ : ");
 		String stu_name = sc.next();
 
-		System.out.println("±âÁ¸ÀÇ ÇĞ³â : " + modifyStudent.getStudent_year());
-		System.out.print("¼öÁ¤ÇÒ ÇĞ³â : ");
+		System.out.println("ê¸°ì¡´ì˜ í•™ë…„ : " + modifyStudent.getStudent_year());
+		System.out.print("ìˆ˜ì •í•  í•™ë…„ : ");
 		int grade = sc.nextInt();
 
-		System.out.println("±âÁ¸ÀÇ ÁÖ¼Ò : " + modifyStudent.getStudent_addr());
-		System.out.print("¼öÁ¤ÇÒ ÁÖ¼Ò : ");
+		System.out.println("ê¸°ì¡´ì˜ ì£¼ì†Œ : " + modifyStudent.getStudent_addr());
+		System.out.print("ìˆ˜ì •í•  ì£¼ì†Œ : ");
 		String address = sc.next();
 
-		System.out.println("±âÁ¸ÀÇ ÀüÈ­¹øÈ£ : " + modifyStudent.getStudent_tel());
-		System.out.print("¼öÁ¤ÇÒ ÀüÈ­¹øÈ£ : ");
+		System.out.println("ê¸°ì¡´ì˜ ì „í™”ë²ˆí˜¸ : " + modifyStudent.getStudent_tel());
+		System.out.print("ìˆ˜ì •í•  ì „í™”ë²ˆí˜¸ : ");
 		String tel = sc.next();
 
-		System.out.println("±âÁ¸ÀÇ »ı³â¿ùÀÏ : " + modifyStudent.getStudent_birth());
-		System.out.print("¼öÁ¤ÇÒ »ı³â¿ùÀÏ : ");
+		System.out.println("ê¸°ì¡´ì˜ ìƒë…„ì›”ì¼ : " + modifyStudent.getStudent_birth());
+		System.out.print("ìˆ˜ì •í•  ìƒë…„ì›”ì¼ : ");
 		String birth = sc.next();
 
 		return new Student(modifyStudent.getStudent_no(), stu_name, grade, address, tel, birth);
 	}
 
 	public void printModifySuccess(int student_no) {
-		System.out.println("> ÇĞ¹ø : " + student_no + " ÇĞ»ıÀÇ Á¤º¸°¡ ¼öÁ¤µÇ¾ú½À´Ï´Ù.\n");
+		System.out.println("> í•™ë²ˆ : " + student_no + " í•™ìƒì˜ ì •ë³´ê°€ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.\n");
 	}
 
 	public void printModifyFail(int student_no) {
-		System.out.println("> ÇĞ¹ø : " + student_no + " ÇĞ»ıÀÇ Á¤º¸ ¼öÁ¤ÀÌ ½ÇÆĞÇß½À´Ï´Ù.\n");
+		System.out.println("> í•™ë²ˆ : " + student_no + " í•™ìƒì˜ ì •ë³´ ìˆ˜ì •ì´ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.\n");
 	}
 
 	public void printDeleteSuccess(int student_no) {
-		System.out.println("> ÇĞ¹ø : " + student_no + " ÇĞ»ıÀÇ Á¤º¸°¡ »èÁ¦µÇ¾ú½À´Ï´Ù.\n");
+		System.out.println("> í•™ë²ˆ : " + student_no + " í•™ìƒì˜ ì •ë³´ê°€ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.\n");
 	}
 
 	public void printDeleteFail(int student_no) {
-		System.out.println("> ÇĞ¹ø : " + student_no + " ÇĞ»ıÀÇ Á¤º¸ »èÁ¦°¡ ½ÇÆĞÇß½À´Ï´Ù.\n");
+		System.out.println("> í•™ë²ˆ : " + student_no + " í•™ìƒì˜ ì •ë³´ ì‚­ì œê°€ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.\n");
 	}
 
-	// ¼ºÀû °ü·Ã ÄÜ¼Ö À¯Æ¿
+	// ì„±ì  ê´€ë ¨ ì½˜ì†” ìœ í‹¸
 
 	public void printRegistedGrade(int student_no) {
-		System.out.println("> ÇĞ¹ø : " + student_no + " ÇĞ»ıÀÇ ¼ºÀûÀº ÀÌ¹Ì µî·ÏµÇ¾î ÀÖ½À´Ï´Ù.\n");
+		System.out.println("> í•™ë²ˆ : " + student_no + " í•™ìƒì˜ ì„±ì ì€ ì´ë¯¸ ë“±ë¡ë˜ì–´ ìˆìŠµë‹ˆë‹¤.\n");
 	}
 
 	public Grade getNewGrade(int student_no, Scanner sc) {
     	sc.useDelimiter(System.getProperty("line.separator"));
 
-		System.out.println("\n> »õ·Î¿î ¼ºÀû Á¤º¸ ÀÔ·Â");
+		System.out.println("\n> ìƒˆë¡œìš´ ì„±ì  ì •ë³´ ì…ë ¥");
 
-		System.out.print("> ±¹¾îÁ¡¼ö : ");
+		System.out.print("> êµ­ì–´ì ìˆ˜ : ");
 		int grade_kor = sc.nextInt();
 
-		System.out.print("> ¿µ¾îÁ¡¼ö : ");
+		System.out.print("> ì˜ì–´ì ìˆ˜ : ");
 		int grade_eng = sc.nextInt();
 
-		System.out.print("> ¼öÇĞÁ¡¼ö : ");
+		System.out.print("> ìˆ˜í•™ì ìˆ˜ : ");
 		int grade_math = sc.nextInt();
 
 		return new Grade(student_no, grade_kor, grade_eng, grade_math);
 	}
 
 	public void printRegistSuccess(Grade newGrade) {
-		System.out.println("> " + newGrade.getStudent_no() + "ÇĞ»ıÀÇ ¼ºÀûÀÌ ÀÔ·ÂµÇ¾ú½À´Ï´Ù.\n");
+		System.out.println("> " + newGrade.getStudent_no() + "í•™ìƒì˜ ì„±ì ì´ ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤.\n");
 	}
 	
 	public void printRegistFail(Grade newGrade) {
-		System.out.println("> " + newGrade.getStudent_no() + "ÇĞ»ıÀÇ ¼ºÀûÀÔ·ÂÀ» ½ÇÆĞÇß½À´Ï´Ù.\n");
+		System.out.println("> " + newGrade.getStudent_no() + "í•™ìƒì˜ ì„±ì ì…ë ¥ì„ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.\n");
 	}
 
 	public void printGradeList(ArrayList<Grade> gradeList) {
-		System.out.println("\n<ÃÑ " + gradeList.size() + "¸íÀÇ ÇĞ»ı ¼ºÀûÀ» Á¶È¸ÇÕ´Ï´Ù.>");
+		System.out.println("\n<ì´ " + gradeList.size() + "ëª…ì˜ í•™ìƒ ì„±ì ì„ ì¡°íšŒí•©ë‹ˆë‹¤.>");
 
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
 
-		System.out.println("¦¢      [ÇĞ¹ø]     [ÀÌ¸§]       [±¹¾î]    [¼öÇĞ]    [¿µ¾î]   [ÃÑÁ¡]    [Æò±Õ] ¦¢");
+		System.out.println("â”‚      [í•™ë²ˆ]     [ì´ë¦„]       [êµ­ì–´]    [ìˆ˜í•™]    [ì˜ì–´]   [ì´ì ]    [í‰ê· ] â”‚");
 		for(int i=0 ; i<gradeList.size() ; i++) {
 
-			System.out.print("¦¢" + (i+1) + ".");
+			System.out.print("â”‚" + (i+1) + ".");
 			for(int j=0 ; (Integer.toString(i+1).length() + j) < 4 ; j++) {
 				System.out.print(" ");
 			}
@@ -294,120 +294,120 @@ public class ConsoleUtil {
 
 			System.out.printf("%.1f", gradeList.get(i).getAvg());
 			if(gradeList.get(i).getAvg() >= 100) {
-				System.out.print(" ¦¢\n");
+				System.out.print(" â”‚\n");
 			}
 			else if(gradeList.get(i).getAvg() >=10) {
-				System.out.print("  ¦¢\n");
+				System.out.print("  â”‚\n");
 			}
 			else {
-				System.out.print("   ¦¢\n");
+				System.out.print("   â”‚\n");
 			}
 		}
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
 	}
 
 	public void printGradeListNotFound() {
-		System.out.println("> µî·ÏµÈ ¼ºÀûÁ¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");		
+		System.out.println("> ë“±ë¡ëœ ì„±ì ì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");		
 	}
 
 	public int getSearchGradeMenuNum(Scanner sc) {
-		System.out.println("\n¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬< ¼ºÀûÁ¤º¸ °Ë»ö >¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬");
-		System.out.println("             1. ÀÌ¸§À¸·Î °Ë»ö                  ");
-		System.out.println("             2. ÇĞ¹øÀ¸·Î °Ë»ö                  ");
-		System.out.println("             3. ÇĞ³âÀ¸·Î °Ë»ö                  ");
-		System.out.println("             4. °Ë»ö Ãë¼Ò                      ");
-		System.out.print("             ¼±ÅÃ : ");
+		System.out.println("\nâ”â”â”â”â”â”â”â”â”< ì„±ì ì •ë³´ ê²€ìƒ‰ >â”â”â”â”â”â”â”â”â”");
+		System.out.println("             1. ì´ë¦„ìœ¼ë¡œ ê²€ìƒ‰                  ");
+		System.out.println("             2. í•™ë²ˆìœ¼ë¡œ ê²€ìƒ‰                  ");
+		System.out.println("             3. í•™ë…„ìœ¼ë¡œ ê²€ìƒ‰                  ");
+		System.out.println("             4. ê²€ìƒ‰ ì·¨ì†Œ                      ");
+		System.out.print("             ì„ íƒ : ");
 		return sc.nextInt();
 	}
 	
 	public void printSearchGradeCancel() {
-		System.out.println("             ¼ºÀûÁ¤º¸ °ü¸® È­¸éÀ¸·Î ÀÌµ¿ÇÕ´Ï´Ù.\n");
+		System.out.println("             ì„±ì ì •ë³´ ê´€ë¦¬ í™”ë©´ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.\n");
 	}
 	
 	public void printSearchGradeListNotFound() {
-		System.out.println("> °Ë»öÁ¶°Ç¿¡ ÇØ´çÇÏ´Â ¼ºÀûÁ¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");
+		System.out.println("> ê²€ìƒ‰ì¡°ê±´ì— í•´ë‹¹í•˜ëŠ” ì„±ì ì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
 	}
 
 	public void printGradeNotFound(int stu_no) {
-		System.out.println("> ÇĞ¹ø : " + stu_no + " ÇĞ»ıÀÇ ¼ºÀûÁ¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");
+		System.out.println("> í•™ë²ˆ : " + stu_no + " í•™ìƒì˜ ì„±ì ì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
 	}
 
 	public Grade getChangeGrade(Grade modifyGrade, Scanner sc) {
 		sc.useDelimiter(System.getProperty("line.separator"));
 
-		System.out.println("\n> º¯°æÇÒ ¼ºÀû Á¤º¸ ÀÔ·Â");
+		System.out.println("\n> ë³€ê²½í•  ì„±ì  ì •ë³´ ì…ë ¥");
 
-		System.out.println("> ±âÁ¸ ±¹¾î¼ºÀû : " + modifyGrade.getGrade_kor());
-		System.out.print("> ¼öÁ¤ ±¹¾î¼ºÀû : ");
+		System.out.println("> ê¸°ì¡´ êµ­ì–´ì„±ì  : " + modifyGrade.getGrade_kor());
+		System.out.print("> ìˆ˜ì • êµ­ì–´ì„±ì  : ");
 		int kor_grade = sc.nextInt();
 
-		System.out.println("> ±âÁ¸ ¿µ¾î¼ºÀû : " + modifyGrade.getGrade_eng());
-		System.out.print("> ¼öÁ¤ ¿µ¾î¼ºÀû : ");
+		System.out.println("> ê¸°ì¡´ ì˜ì–´ì„±ì  : " + modifyGrade.getGrade_eng());
+		System.out.print("> ìˆ˜ì • ì˜ì–´ì„±ì  : ");
 		int eng_grade = sc.nextInt();
 
-		System.out.println("> ±âÁ¸ ¼öÇĞ¼ºÀû : " + modifyGrade.getGrade_math());
-		System.out.print("> ¼öÁ¤ ¼öÇĞ¼ºÀû : ");
+		System.out.println("> ê¸°ì¡´ ìˆ˜í•™ì„±ì  : " + modifyGrade.getGrade_math());
+		System.out.print("> ìˆ˜ì • ìˆ˜í•™ì„±ì  : ");
 		int math_grade = sc.nextInt();
 
 		return new Grade(modifyGrade.getStudent_no(), modifyGrade.getStudent_name(), kor_grade, eng_grade, math_grade);
 	}
 
 	public void printModifySuccess(Grade changeGrade) {
-		System.out.println("> ÇĞ¹ø : " + changeGrade.getStudent_no() + " ÇĞ»ıÀÇ ¼ºÀûÁ¤º¸°¡ ¼öÁ¤µÇ¾ú½À´Ï´Ù.\n");
+		System.out.println("> í•™ë²ˆ : " + changeGrade.getStudent_no() + " í•™ìƒì˜ ì„±ì ì •ë³´ê°€ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.\n");
 	}
 
 	public void printModifyFail(Grade changeGrade) {
-		System.out.println("> ÇĞ¹ø : " + changeGrade.getStudent_no() + " ÇĞ»ıÀÇ ¼ºÀûÁ¤º¸ ¼öÁ¤ÀÌ ½ÇÆĞÇß½À´Ï´Ù.\n");
+		System.out.println("> í•™ë²ˆ : " + changeGrade.getStudent_no() + " í•™ìƒì˜ ì„±ì ì •ë³´ ìˆ˜ì •ì´ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.\n");
 	}
 
 	public void printDeleteSuccess(Grade deleteGrade) {
-		System.out.println("> ÇĞ¹ø : " + deleteGrade.getStudent_no() + " ÇĞ»ıÀÇ ¼ºÀûÁ¤º¸°¡ »èÁ¦µÇ¾ú½À´Ï´Ù.\n");
+		System.out.println("> í•™ë²ˆ : " + deleteGrade.getStudent_no() + " í•™ìƒì˜ ì„±ì ì •ë³´ê°€ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.\n");
 	}
 
 	public void printDeleteFail(Grade deleteGrade) {
-		System.out.println("> ÇĞ¹ø : " + deleteGrade.getStudent_no() + " ÇĞ»ıÀÇ ¼ºÀûÁ¤º¸ »èÁ¦°¡ ½ÇÆĞÇß½À´Ï´Ù.\n");
+		System.out.println("> í•™ë²ˆ : " + deleteGrade.getStudent_no() + " í•™ìƒì˜ ì„±ì ì •ë³´ ì‚­ì œê°€ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.\n");
 	}
 
-	// ÀåÇĞ±İ °ü·Ã ÄÜ¼Ö À¯Æ¿
+	// ì¥í•™ê¸ˆ ê´€ë ¨ ì½˜ì†” ìœ í‹¸
 
 	public String getScholar_name(String msgKind, Scanner sc) {
-		System.out.print("\n> " + msgKind + "ÀåÇĞ±İ¸í : ");
+		System.out.print("\n> " + msgKind + "ì¥í•™ê¸ˆëª… : ");
 		return sc.next();
 	}
 
 	public void printRegistedScholarship(String scholar_name) {
-		System.out.println("> ÀåÇĞ±İ¸í : " + scholar_name + " Àº ÀÌ¹Ì µî·ÏµÇ¾î ÀÖ½À´Ï´Ù.\n");
+		System.out.println("> ì¥í•™ê¸ˆëª… : " + scholar_name + " ì€ ì´ë¯¸ ë“±ë¡ë˜ì–´ ìˆìŠµë‹ˆë‹¤.\n");
 	}
 
 	public Scholarship getNewScholarShip(String scholar_name, Scanner sc) {
 		sc.useDelimiter(System.getProperty("line.separator"));
 
-		System.out.println("\n> »õ·Î¿î ÀåÇĞ±İ Á¤º¸ ÀÔ·Â");
+		System.out.println("\n> ìƒˆë¡œìš´ ì¥í•™ê¸ˆ ì •ë³´ ì…ë ¥");
 
-		System.out.print("> ¹éºĞÀ² : ");
+		System.out.print("> ë°±ë¶„ìœ¨ : ");
 		int percent = sc.nextInt();
 
-		System.out.print("> ÀåÇĞ±İ¾× : ");
+		System.out.print("> ì¥í•™ê¸ˆì•¡ : ");
 		int money = sc.nextInt();
 
 		return new Scholarship(scholar_name, percent, money);
 	}
 
 	public void printRegistSuccess(Scholarship newScholarship) {
-		System.out.println("> ÀåÇĞ±İ¸í : " + newScholarship.getScholar_name() + " ÀÇ Á¤º¸°¡ µî·ÏµÇ¾ú½À´Ï´Ù.\n");
+		System.out.println("> ì¥í•™ê¸ˆëª… : " + newScholarship.getScholar_name() + " ì˜ ì •ë³´ê°€ ë“±ë¡ë˜ì—ˆìŠµë‹ˆë‹¤.\n");
 	}
 
 	public void printRegistFail(Scholarship newScholarship) {
-		System.out.println("> ÀåÇĞ±İ¸í : " + newScholarship.getScholar_name() + " ÀÇ Á¤º¸ µî·ÏÀÌ ½ÇÆĞÇß½À´Ï´Ù.\n");
+		System.out.println("> ì¥í•™ê¸ˆëª… : " + newScholarship.getScholar_name() + " ì˜ ì •ë³´ ë“±ë¡ì´ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.\n");
 	}
 
     public void printScholarshipList(ArrayList<Scholarship> scholarshipList) {
-		System.out.println("\n<ÃÑ " + scholarshipList.size() + "Á¾·ùÀÇ ÀåÇĞ±İÀ» Á¶È¸ÇÕ´Ï´Ù.>");
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢       [ÀåÇĞ±İ¸í]       [»óÀ§¹éºĞÀ²]         [±İ¾×]     ¦¢");
+		System.out.println("\n<ì´ " + scholarshipList.size() + "ì¢…ë¥˜ì˜ ì¥í•™ê¸ˆì„ ì¡°íšŒí•©ë‹ˆë‹¤.>");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚       [ì¥í•™ê¸ˆëª…]       [ìƒìœ„ë°±ë¶„ìœ¨]         [ê¸ˆì•¡]     â”‚");
 		for(int i=0 ; i<scholarshipList.size() ; i++) {
 			
-			System.out.print("¦¢" + (i+1) + ".");
+			System.out.print("â”‚" + (i+1) + ".");
 			for(int j=0 ; (Integer.toString(i+1).length() + j) < 4 ; j++) {
 				System.out.print(" ");
 			}
@@ -428,79 +428,79 @@ public class ConsoleUtil {
 				System.out.print(" ");
 			}
 			
-			System.out.println("¦¢");
+			System.out.println("â”‚");
 		}
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
 	}
 
 	public void printScholarshipListNotFound() {
-		System.out.println("> µî·ÏµÈ ÀåÇĞ±İÁ¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");
+		System.out.println("> ë“±ë¡ëœ ì¥í•™ê¸ˆì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
 	}
 
 	public int getSearchMenuNumScholarship(Scanner sc) {
-		System.out.println("\n¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬< ÀåÇĞ±İÁ¾·ù °Ë»ö >¦¬¦¬¦¬¦¬¦¬¦¬¦¬¦¬");
-		System.out.println("             1. ÀåÇĞ±İ¸íÀ¸·Î °Ë»ö");
-		System.out.println("             2. ÀåÇĞ±İ¾×À¸·Î °Ë»ö");
-		System.out.print("             ¼±ÅÃ : ");
+		System.out.println("\nâ”â”â”â”â”â”â”â”â”< ì¥í•™ê¸ˆì¢…ë¥˜ ê²€ìƒ‰ >â”â”â”â”â”â”â”â”");
+		System.out.println("             1. ì¥í•™ê¸ˆëª…ìœ¼ë¡œ ê²€ìƒ‰");
+		System.out.println("             2. ì¥í•™ê¸ˆì•¡ìœ¼ë¡œ ê²€ìƒ‰");
+		System.out.print("             ì„ íƒ : ");
 		return sc.nextInt();
 	}
 
 	public int getMoney(String msgKind, Scanner sc) {
-		System.out.print("\n> " + msgKind + "±İ¾× : ");
+		System.out.print("\n> " + msgKind + "ê¸ˆì•¡ : ");
 		return sc.nextInt();
 	}
 
 	public void printSearchScholarshipListNotFound() {
-		System.out.println("> °Ë»öÁ¶°Ç¿¡ ÇØ´çÇÏ´Â ÀåÇĞ±İÁ¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");
+		System.out.println("> ê²€ìƒ‰ì¡°ê±´ì— í•´ë‹¹í•˜ëŠ” ì¥í•™ê¸ˆì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
 	}
 
 	public void printScholarshipNotFound(String scholar_name) {
-		System.out.println("> ÀåÇĞ±İ¸í : " + scholar_name + " Á¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");
+		System.out.println("> ì¥í•™ê¸ˆëª… : " + scholar_name + " ì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
 	}
 
 	public Scholarship getChangeScholarship(Scholarship modifyScholarship,
 			Scanner sc) {
 
 		sc.useDelimiter(System.getProperty("line.separator"));
-		System.out.println("\n> º¯°æÇÒ ÀåÇĞ±İ Á¤º¸ ÀÔ·Â");
+		System.out.println("\n> ë³€ê²½í•  ì¥í•™ê¸ˆ ì •ë³´ ì…ë ¥");
 
-		System.out.println("> ±âÁ¸ ¹éºĞÀ² : " + modifyScholarship.getScholar_percent());
-		System.out.print("> ¼öÁ¤ ¹éºĞÀ² : ");
+		System.out.println("> ê¸°ì¡´ ë°±ë¶„ìœ¨ : " + modifyScholarship.getScholar_percent());
+		System.out.print("> ìˆ˜ì • ë°±ë¶„ìœ¨ : ");
 		int scholar_percent = sc.nextInt();
 
-		System.out.println("> ±âÁ¸ ÀåÇĞ±İ¾× : " + modifyScholarship.getScholar_money());
-		System.out.print("> ¼öÁ¤ ÀåÇĞ±İ¾× : ");
+		System.out.println("> ê¸°ì¡´ ì¥í•™ê¸ˆì•¡ : " + modifyScholarship.getScholar_money());
+		System.out.print("> ìˆ˜ì • ì¥í•™ê¸ˆì•¡ : ");
 		int scholar_money = sc.nextInt();
 
 		return new Scholarship(modifyScholarship.getScholar_name(), scholar_percent, scholar_money);
 	}
 
 	public void printModifySuccess(Scholarship changeScholarship) {
-		System.out.println("> ÀåÇĞ±İ¸í : " + changeScholarship.getScholar_name() + " ÀÇ Á¤º¸°¡ ¼öÁ¤µÇ¾ú½À´Ï´Ù.\n");
+		System.out.println("> ì¥í•™ê¸ˆëª… : " + changeScholarship.getScholar_name() + " ì˜ ì •ë³´ê°€ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.\n");
 	}
 
 	public void printModifyFail(Scholarship changeScholarship) {
-		System.out.println("> ÀåÇĞ±İ¸í : " + changeScholarship.getScholar_name() + " ÀÇ Á¤º¸ ¼öÁ¤ÀÌ ½ÇÆĞÇß½À´Ï´Ù.\n");
+		System.out.println("> ì¥í•™ê¸ˆëª… : " + changeScholarship.getScholar_name() + " ì˜ ì •ë³´ ìˆ˜ì •ì´ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.\n");
 	}
 
 	public void printDeleteSuccess(Scholarship deletescholarship) {
-		System.out.println("> ÀåÇĞ±İ¸í : " + deletescholarship.getScholar_name() + " ÀÇ Á¤º¸°¡ »èÁ¦µÇ¾ú½À´Ï´Ù.\n");
+		System.out.println("> ì¥í•™ê¸ˆëª… : " + deletescholarship.getScholar_name() + " ì˜ ì •ë³´ê°€ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.\n");
 	}
 
 	public void printDeleteFail(Scholarship deletescholarship) {
-		System.out.println("> ÀåÇĞ±İ¸í : " + deletescholarship.getScholar_name() + " ÀÇ Á¤º¸ »èÁ¦°¡ ½ÇÆĞÇß½À´Ï´Ù.\n");
+		System.out.println("> ì¥í•™ê¸ˆëª… : " + deletescholarship.getScholar_name() + " ì˜ ì •ë³´ ì‚­ì œê°€ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.\n");
 
 	}
 
 	public void printScholarshipStudentList(
 			ArrayList<ScholarshipStudent> scholarshipStudentSearchList) {
-				System.out.println("\n<ÃÑ " + scholarshipStudentSearchList.size() + "¸íÀÇ ¼öÇıÇĞ»ıÀ» Á¶È¸ÇÕ´Ï´Ù.>");
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢      [ÇĞ¹ø]     [ÀÌ¸§]       [Æò±Õ]   [¹éºĞÀ²]      [ÀåÇĞ±İ¸í]      [ÀåÇĞ±İ¾×] ¦¢");
+				System.out.println("\n<ì´ " + scholarshipStudentSearchList.size() + "ëª…ì˜ ìˆ˜í˜œí•™ìƒì„ ì¡°íšŒí•©ë‹ˆë‹¤.>");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚      [í•™ë²ˆ]     [ì´ë¦„]       [í‰ê· ]   [ë°±ë¶„ìœ¨]      [ì¥í•™ê¸ˆëª…]      [ì¥í•™ê¸ˆì•¡] â”‚");
 
 		for(int i=0 ; i<scholarshipStudentSearchList.size() ; i++) {
 			
-			System.out.print("¦¢" + (i+1) + ".");
+			System.out.print("â”‚" + (i+1) + ".");
 			for(int j=0 ; (Integer.toString(i+1).length() + j) < 4 ; j++) {
 				System.out.print(" ");
 			}
@@ -548,13 +548,13 @@ public class ConsoleUtil {
 			for(int j=0 ; (Integer.toString(scholarshipStudentSearchList.get(i).getScholar_money()).length() + j) < 9 ; j++) {
 				System.out.print(" ");
 			}
-			System.out.println("¦¢");
+			System.out.println("â”‚");
 		}
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
 	}
 
 	public void printScholarshipStudentListNotFound() {
-		System.out.println("> µî·ÏµÈ ÀåÇĞ±İ ¼öÇıÇĞ»ı Á¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.\n");	
+		System.out.println("> ë“±ë¡ëœ ì¥í•™ê¸ˆ ìˆ˜í˜œí•™ìƒ ì •ë³´ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.\n");	
 	}
 
 }
