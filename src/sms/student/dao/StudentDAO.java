@@ -42,7 +42,7 @@ public class StudentDAO {
 	}
 
 	public ArrayList<Student> selectStudentList() throws Exception{
-		//ÀüÃ¼Á¶È¸
+		//ï¿½ï¿½Ã¼ï¿½ï¿½È¸
 		ArrayList<Student> studentList = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -73,8 +73,8 @@ public class StudentDAO {
 	}
 
 	public Student selectStudent(int student_no) throws Exception{
-		// ´ÜÀÏ ÇÐ»ý Á¶È¸
-		// ÇÐ¹øÀ» ¹Þ¾Æ¼­ ÇÐ»ý°´Ã¼¸¦ ¹ÝÈ¯ÇÑ´Ù.
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½Ð»ï¿½ ï¿½ï¿½È¸
+		// ï¿½Ð¹ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¼ï¿½ ï¿½Ð»ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ñ´ï¿½.
 		Student student = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -103,7 +103,7 @@ public class StudentDAO {
 	}
 
 	public ArrayList<Student> selectStudentByStudent_no(int student_no) {
-		//ÀüÃ¼Á¶È¸
+		//ï¿½ï¿½Ã¼ï¿½ï¿½È¸
 		ArrayList<Student> studentList = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -134,7 +134,7 @@ public class StudentDAO {
 	}
 
 	public ArrayList<Student> selectStudentListByStudent_name(String student_name) throws Exception{
-		//ÀüÃ¼Á¶È¸
+		//ï¿½ï¿½Ã¼ï¿½ï¿½È¸
 		ArrayList<Student> searchStudentList = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -166,7 +166,7 @@ public class StudentDAO {
 	}
 
 	public ArrayList<Student> selectStudentListByStudent_year(int student_year) throws Exception {
-		//ÀüÃ¼Á¶È¸
+		//ï¿½ï¿½Ã¼ï¿½ï¿½È¸
 		ArrayList<Student> searchStudentList = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -200,20 +200,28 @@ public class StudentDAO {
 
 	public int deleteStudent(int student_no) throws Exception{
 		int deleteCount = 0;
-		PreparedStatement pstmt = null;
-		// DELETE FROM Å×ÀÌºí¸í
-		// WHERE [Á¶°Ç½Ä]
-		String sql = "DELETE FROM student"
+		PreparedStatement pstmt_child = null;
+		PreparedStatement pstmt_parent = null;
+		// DELETE FROM ï¿½ï¿½ï¿½Ìºï¿½ï¿½
+		// WHERE [ï¿½ï¿½ï¿½Ç½ï¿½]
+		String sql_child = "DELETE FROM grade"
+				+ " WHERE student_no = ?";
+		String sql_parent = "DELETE FROM student"
 				+ " WHERE student_no = ?";
 		try {
-			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, student_no);
-			deleteCount = pstmt.executeUpdate();
+			pstmt_child = con.prepareStatement(sql_child);
+			pstmt_child.setInt(1, student_no);
+			deleteCount = pstmt_child.executeUpdate();
+			pstmt_parent = con.prepareStatement(sql_parent);
+			pstmt_parent.setInt(1, student_no);
+			deleteCount += pstmt_parent.executeUpdate();
 			
 		}catch(Exception e) {
+			con.rollback();
 			e.printStackTrace();
 		}finally {
-			pstmt.close();
+			pstmt_child.close();
+			pstmt_parent.close();
 		}
 		
 		return deleteCount;
@@ -223,9 +231,9 @@ public class StudentDAO {
 	public int updateStudent(Student changeStudent, Date birth) throws Exception{
 		int updateCount = 0;
 		PreparedStatement pstmt = null;
-		// UPDATE [º¯°æÇÒ TABLE¸í]
-		// SET [º¯°æÇÒ ¿­1 = »õ·Î¿î °ª1], [º¯°æÇÒ ¿­2 = »õ·Î¿î °ª2]
-		// 		WHERE Á¶°Ç½Ä
+		// UPDATE [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ TABLEï¿½ï¿½]
+		// SET [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½1 = ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½1], [ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½2 = ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½2]
+		// 		WHERE ï¿½ï¿½ï¿½Ç½ï¿½
 		String sql = "UPDATE student"
 				+ " SET Student_name = ?, Student_year = ?,Student_addr = ?, Student_tel = ?, Student_birth = ? "
 				+ " WHERE student_no = ?";

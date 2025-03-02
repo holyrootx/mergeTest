@@ -23,32 +23,32 @@ public class StudentSearchAction implements Action {
 		ArrayList<Student> searchStudentList = new ArrayList<>();
 		int selectService = consoleUtil.getSearchMenuNum(sc);
 		
-		// 1. ÀÌ¸§À¸·Î
-		// 2. ÇÐ¹øÀ¸·Î
-		// 3. ÇÐ³âÀ¸·Î
-		// 4 °Ë»ö Ãë¼Ò
+		// 1. ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½
+		// 2. ï¿½Ð¹ï¿½ï¿½ï¿½ï¿½ï¿½
+		// 3. ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½
+		// 4 ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½
 		if(selectService == 1) {
-			String student_name = consoleUtil.getStudent_name("°Ë»öÇÒ", sc);
+			String student_name = consoleUtil.getStudent_name("ï¿½Ë»ï¿½ï¿½ï¿½", sc);
 			searchStudentList = studentSearchService.getSearchStudentListByStudent_name(student_name);
-			if(searchStudentList == null) {
+			if(searchStudentList.size() == 0) {
 				consoleUtil.printSearchStudentListNotFound();
 			} else {
 				consoleUtil.printStudentList(searchStudentList);
 			}
 			
 		} else if(selectService == 2) {
-			int student_no = consoleUtil.getStudent_no("°Ë»öÇÒ",sc);
+			int student_no = consoleUtil.getStudent_no("ï¿½Ë»ï¿½ï¿½ï¿½",sc);
 			searchStudentList = studentSearchService.getSearchStudentListByStudent_no(student_no);
-			if(searchStudentList == null) {
+			if(searchStudentList.size() == 0) {
 				consoleUtil.printSearchStudentListNotFound();
 			} else {
 				consoleUtil.printStudentList(searchStudentList);
 			}
 			
 		} else if(selectService == 3) {
-			int student_year = consoleUtil.getGrade("°Ë»öÇÒ",sc);
+			int student_year = consoleUtil.getGrade("ï¿½Ë»ï¿½ï¿½ï¿½",sc);
 			searchStudentList = studentSearchService.getSearchStudentListByStudent_year(student_year);
-			if(searchStudentList == null) {
+			if(searchStudentList.size() == 0) {
 				consoleUtil.printSearchStudentListNotFound();
 			} else {
 				consoleUtil.printStudentList(searchStudentList);

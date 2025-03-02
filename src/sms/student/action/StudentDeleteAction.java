@@ -13,18 +13,18 @@ public class StudentDeleteAction implements Action {
 	@Override
 	public void execute(Scanner sc) throws Exception {
 		int stu_no = consoleUtil.getStudent_no("", sc);
-		// ÇÐ¹ø ¹Þ¾Æ¼­ getModifyStudent ½ÇÇà
+		// ï¿½Ð¹ï¿½ ï¿½Þ¾Æ¼ï¿½ getModifyStudent ï¿½ï¿½ï¿½ï¿½
 		Student deleteStudent = studentDeleteService.getDeleteStudent(stu_no);
 		
 		if(deleteStudent == null) {
-			// ÇØ´çÇÏ´Â ÇÐ»ýÀÌ ¾ø´Ù¸é
+			// ï¿½Ø´ï¿½ï¿½Ï´ï¿½ ï¿½Ð»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ù¸ï¿½
 			consoleUtil.printStudentNotFound(stu_no);
 			return;
 		}
 		
 		boolean isDeleteSuccess = studentDeleteService.deleteStudent(stu_no);
 		
-		// »èÁ¦ ½ÇÆÐ½Ã
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ð½ï¿½
 		if(isDeleteSuccess) {
 			consoleUtil.printDeleteSuccess(stu_no);
 		} else {

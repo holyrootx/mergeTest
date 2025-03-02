@@ -11,7 +11,7 @@ public class StudentDeleteService {
 		Connection con = getConnection();
 		StudentDAO studentDAO = new StudentDAO(con);
 		Student student = studentDAO.selectStudent(stu_no);
-		// ÇÐ¹ø °¡Áö°í ¼öÁ¤ ´ë»ó ÇÐ»ý °¡Á®¿À±â
+		// ï¿½Ð¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ð»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		
 		return student;
 	}
@@ -24,9 +24,10 @@ public class StudentDeleteService {
 		boolean isDeleteSuccess = false;
 		
 		if (deleteCount > 0) {
-			// ¼º°ø½Ã ¼º°ø¿©ºÎ ¹ÝÈ¯ÇÏ´Â º¯¼ö °ª º¯°æ
+			
 			isDeleteSuccess = true;
 			commit(con);
+			
 		} else {
 			rollback(con);
 		}

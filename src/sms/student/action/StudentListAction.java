@@ -16,8 +16,8 @@ public class StudentListAction implements Action {
 		
 		ArrayList<Student> studentList = studentListService.getStudentList();
 		
-		if(studentList != null) {
-			//Á¶È¸ ¼º°øÇßÀ¸¸é
+		if(studentList.size() != 0) {
+			//ï¿½ï¿½È¸ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			consoleUtil.printStudentList(studentList);
 		} else {
 			consoleUtil.printStudentListNotFound();
