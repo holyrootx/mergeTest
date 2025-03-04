@@ -14,7 +14,7 @@ public class StudentRegistService {
 	public String compareBirthRegistForm(Student newStudent) {
 		String unfitForm = null;
 	    String birth = newStudent.getStudent_birth();
-	    // ÀÚ¸®¼ö È®ÀÎ
+	    // ï¿½Ú¸ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 	    if(birth.length() != 10 || birth.indexOf("-") != 4 || birth.indexOf("-", 5) != 7) {
 	       return birth;
 	    }
@@ -58,18 +58,18 @@ public class StudentRegistService {
 	public boolean searchStudent(int student_no) throws Exception{
 		boolean isRegisted = false;
 		Connection con = getConnection();
-		StudentDAO studentDAO = new StudentDAO(con); // dao ¸Å¹ø »õ·Î ¸¸µé±â ¶§¹®¿¡ con °´Ã¼µµ »õ·Î »ý¼ºµÊ
+		StudentDAO studentDAO = new StudentDAO(con); // dao ï¿½Å¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ con ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		
 		Student student = studentDAO.selectStudent(student_no);
 		
 		if(student != null) {
-			// ÇÐ»ýÀÌ ¾ø´Ù¸é µî·ÏÀÌ ¾ÈµÇ¾ú´Ù´Â ÀÇ¹Ì 
-			// nullÀÌ ¾Æ´Ï¸é °´Ã¼°¡ ÀÖ´Ù´Â ¸».
-			// ¿©±â´Â ÇÐ»ýÀÌ ÀÖÀ¸¸é isRegisted¸¦ true·Î ¹Ù²Û´Ù.
+			// ï¿½Ð»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ÈµÇ¾ï¿½ï¿½Ù´ï¿½ ï¿½Ç¹ï¿½ 
+			// nullï¿½ï¿½ ï¿½Æ´Ï¸ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Ö´Ù´ï¿½ ï¿½ï¿½.
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ isRegistedï¿½ï¿½ trueï¿½ï¿½ ï¿½Ù²Û´ï¿½.
 			isRegisted = true;
 			return isRegisted;
 		}
-		// µî·ÏÀ» ÁøÇàÇÑ´Ù.
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		
 		return false;
 	}
@@ -78,7 +78,7 @@ public class StudentRegistService {
 		boolean isRegistSuccess = false;
 		Connection con = getConnection();
 		StudentDAO studentDAO = new StudentDAO(con);
-		// ¹®ÀÚ¿­ -> DATE Å¸ÀÔÀ¸·Î Ä³½ºÆÃÇÏ´Â ¹æ¹ý
+		// ï¿½ï¿½ï¿½Ú¿ï¿½ -> DATE Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½
 		Date birth = null;
 		
 		try{
@@ -97,6 +97,7 @@ public class StudentRegistService {
 		} else {
 			rollback(con);
 		}
+		close(con);
 		return isRegistSuccess;
 	}
 	

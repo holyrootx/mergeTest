@@ -13,6 +13,7 @@ public class StudentDeleteService {
 		Student student = studentDAO.selectStudent(stu_no);
 		// �й� ������ ���� ��� �л� ��������
 		
+		close(con);
 		return student;
 	}
 		
@@ -31,7 +32,7 @@ public class StudentDeleteService {
 		} else {
 			rollback(con);
 		}
-		con.close();
+		close(con);
 		return isDeleteSuccess;
 	}
 	

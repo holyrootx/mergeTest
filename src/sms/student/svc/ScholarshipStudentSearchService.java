@@ -36,9 +36,9 @@ public class ScholarshipStudentSearchService {
 			Scholarship searchScholarship, ArrayList<Grade> gradeListAddPercent) throws Exception{
 		ArrayList<ScholarshipStudent> ScholarshipStudentList = new ArrayList<>();
 		
-		// 가져와서 그냥 뽑아내면됨 ㅅㄱ
+		
 		float numOfTier = (float)searchScholarship.getScholar_percent()*0.01f;
-		// (int)(percent * 10 + 0.5f) / 10f;
+		
 		for(Grade grade : gradeListAddPercent) {
 			System.out.printf("이름 : %s  퍼센트 : %f  등급 : %f%% %n",grade.getStudent_name(),grade.getPercent(),numOfTier);
 			if(grade.getPercent() <= numOfTier) {

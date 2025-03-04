@@ -17,7 +17,7 @@ public class GradeListService {
 		
 		gradeList = gradeDAO.selectGradeList();
 		
-		con.close();
+		close(con);
 		return gradeList;
 	}
 	

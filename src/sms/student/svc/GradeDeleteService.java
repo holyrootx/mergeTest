@@ -13,7 +13,7 @@ public class GradeDeleteService {
 		GradeDAO gradeDAO = new GradeDAO(con);
 		Grade grade = gradeDAO.selectGrade(student_no);	
 		
-		con.close();
+		close(con);
 		return grade;
 	}
 	
@@ -31,7 +31,7 @@ public class GradeDeleteService {
 			con.rollback();
 		}
 		
-		con.close();
+		close(con);
 		return isDeleteSuccess;
 	}
 	

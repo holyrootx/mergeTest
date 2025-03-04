@@ -13,7 +13,7 @@ public class GradeModifyService {
 		
 		Grade newGrade = gradeDAO.selectGrade(student_no);
 		
-		con.close();
+		close(con);
 		
 		return newGrade;
 	}
@@ -35,7 +35,7 @@ public class GradeModifyService {
 		}
 		
 		
-		con.close();
+		close(con);
 		
 		return isModifySuccess;
 	}

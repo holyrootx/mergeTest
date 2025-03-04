@@ -16,7 +16,7 @@ public class ScholarshipModifyService {
 		
 		Scholarship newScholarship = scholarshipDAO.selectScholarship(sc_name);
 		
-		con.close();
+		close(con);
 		
 		return newScholarship;
 	}
@@ -37,7 +37,7 @@ public class ScholarshipModifyService {
 			rollback(con);
 		}
 		
-		con.close();
+		close(con);
 		
 		return isModifySuccess;
 	}

@@ -15,15 +15,16 @@ public class StudentModifyService {
 		Connection con = getConnection();
 		StudentDAO studentDAO = new StudentDAO(con);
 		Student student = studentDAO.selectStudent(student_no);
-		// ÇÐ¹ø °¡Áö°í ¼öÁ¤ ´ë»ó ÇÐ»ý °¡Á®¿À±â
+		// ï¿½Ð¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ð»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		
+		close(con);
 		return student;
 	}
 	
 	public String compareBirthRegistForm(Student changeStudent) {
 		String unfitForm = null;
 	    String birth = changeStudent.getStudent_birth();
-	    // ÀÚ¸®¼ö È®ÀÎ
+	    // ï¿½Ú¸ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 	    if(birth.length() != 10 || birth.indexOf("-") != 4 || birth.indexOf("-", 5) != 7) {
 	       return birth;
 	    }
@@ -67,7 +68,7 @@ public class StudentModifyService {
 	public boolean modifyStudent(Student changeStudent) throws Exception{
 		Date birth = null;
 		Connection con = getConnection();
-		StudentDAO studentDAO = new StudentDAO(con); // dao ¸Å¹ø »õ·Î ¸¸µé±â ¶§¹®¿¡ con °´Ã¼µµ »õ·Î »ý¼ºµÊ
+		StudentDAO studentDAO = new StudentDAO(con); // dao ï¿½Å¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ con ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		
 		try{
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -78,19 +79,19 @@ public class StudentModifyService {
 			e.printStackTrace();
 		}
 		
-		// ¼­ºñ½º ¼º°ø ¿©ºÎ ¸®ÅÏ ¹Þ´Â ±¸¹® Â¥¾ßÇÔ
-		// isModifySuccess ¼º°ø ¿©ºÎ
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½ Â¥ï¿½ï¿½ï¿½ï¿½
+		// isModifySuccess ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		boolean isModifySuccess = false;
 		int updateCount = studentDAO.updateStudent(changeStudent, birth);
-		// executeQuery() ¼º°øÇÏ¸é 0º¸´Ù Å« °ªÀ» ³Ñ°ÜÁÖ´Ï±î 0À¸·Î ºñ±³
+		// executeQuery() ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ 0ï¿½ï¿½ï¿½ï¿½ Å« ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ°ï¿½ï¿½Ö´Ï±ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 		if (updateCount > 0) {
-			// ¼º°ø½Ã ¼º°ø¿©ºÎ ¹ÝÈ¯ÇÏ´Â º¯¼ö °ª º¯°æ
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			isModifySuccess = true;
 			commit(con);
 		} else {
 			rollback(con);
 		}
-		con.close();
+		close(con);
 		return isModifySuccess;
 	}
 }

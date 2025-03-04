@@ -18,7 +18,7 @@ public class ScholarshipRegistService {
 			// 등록된 정보가 있다면 등록되어 있다고 알림.
 			isRegisted = true;
 		}
-		con.close();
+		close(con);
 		return isRegisted;
 	}
 
@@ -37,7 +37,7 @@ public class ScholarshipRegistService {
 		}
 		
 		
-		con.close();
+		close(con);
 		return isRegistSuccess;
 	}
 	

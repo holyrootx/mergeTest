@@ -11,10 +11,10 @@ public class GradeRegistService {
 		
 	public Student getRightStudent(int student_no) throws Exception{
 		Connection con = getConnection();
-		StudentDAO studentDAO = new StudentDAO(con); // dao ¸Å¹ø »õ·Î ¸¸µé±â ¶§¹®¿¡ con °´Ã¼µµ »õ·Î »ý¼ºµÊ
+		StudentDAO studentDAO = new StudentDAO(con); // dao ï¿½Å¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ con ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		
 		Student student = studentDAO.selectStudent(student_no);
-		con.close();
+		close(con);
 		
 		return student;
 	}
@@ -27,13 +27,13 @@ public class GradeRegistService {
 		boolean isExist = false;
 		
 		if (grade != null) {
-			// grade°¡ ÀÖÀ¸¸é ÀÌ¹Ì µî·ÏµÇ¾ú´Ù´Â ¶æÀÌ´Ï±î. true
+			// gradeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ÏµÇ¾ï¿½ï¿½Ù´ï¿½ ï¿½ï¿½ï¿½Ì´Ï±ï¿½. true
 			isExist = true;
 		}
 		
 		
 		
-		con.close();
+		close(con);
 		
 		return isExist;
 	}
@@ -46,10 +46,10 @@ public class GradeRegistService {
 		
 		int registCount = gradeDAO.insertGrade(newGrade);
 		if (registCount > 0) {
-			// 0º¸´Ù Å©¸é ¼º°ø
+			// 0ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			isRegistSuccess = true;
 		}
-		con.close();
+		close(con);
 		return isRegistSuccess;
 	}
 
