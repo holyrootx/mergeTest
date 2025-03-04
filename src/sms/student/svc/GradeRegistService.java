@@ -28,13 +28,6 @@ public class GradeRegistService {
         Connection con = getConnection();
         GradeDAO gradeDAO = new GradeDAO(con);
         
-        
-        int total = newGrade.getGrade_kor() + newGrade.getGrade_eng() + newGrade.getGrade_math();
-        float avg = total / 3.0f;
-        
-        newGrade.setTotal(total);
-        newGrade.setAvg(avg);
-        
         int insertCount = gradeDAO.insertGrade(newGrade);
         
         if (insertCount > 0) {
