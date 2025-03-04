@@ -7,31 +7,27 @@ import sms.student.vo.Grade;
 
 public class GradeDeleteAction implements Action {
 
-	ConsoleUtil consoleUtil = new ConsoleUtil();
-	GradeDeleteService gradeDeleteService = new GradeDeleteService();
+    ConsoleUtil consoleUtil = new ConsoleUtil();
+    GradeDeleteService gradeDeleteService = new GradeDeleteService();
 
-	@Override
-	public void execute(Scanner sc) throws Exception {
-		int student_no = consoleUtil.getStudent_no("삭제할 학생의 ", sc);
-		// �й� �޾Ƽ� getModifyStudent ����
-		Grade deleteGrade = gradeDeleteService.getDeleteScore(student_no);
-		
-		if(deleteGrade == null) {
-			// �ش��ϴ� �л��� ���ٸ�
-			consoleUtil.printStudentNotFound(student_no);
-			return;
-		}
-		
-		boolean isDeleteSuccess = gradeDeleteService.deleteGrade(student_no);
-		
-		// ���� ���н�
-		if(isDeleteSuccess) {
-			consoleUtil.printDeleteSuccess(deleteGrade);
-		} else {
-			consoleUtil.printDeleteFail(deleteGrade);
-		}		
-		
-		
-	}
-	
+    @Override
+    public void execute(Scanner sc) throws Exception {
+    	
+        int stu_no = consoleUtil.getStudent_no("������ ", sc);
+        Grade deleteGrade = gradeDeleteService.getDeleteScore(stu_no);
+        
+        if (deleteGrade == null) {
+            consoleUtil.printStudentNotFound(stu_no);
+            return;
+        }
+
+        
+        boolean isDeleteSuccess = gradeDeleteService.deleteGrade(stu_no);
+
+        if (isDeleteSuccess) {
+            consoleUtil.printDeleteSuccess(deleteGrade);
+        } else {
+            consoleUtil.printDeleteFail(deleteGrade);
+        }
+    }
 }

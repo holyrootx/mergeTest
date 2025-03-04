@@ -5,6 +5,7 @@ import java.util.Scanner;
 import sms.student.svc.GradeListService;
 import sms.student.util.ConsoleUtil;
 import sms.student.vo.Grade;
+import sms.student.vo.Student;
 
 public class GradeListAction implements Action {
 
@@ -13,13 +14,16 @@ public class GradeListAction implements Action {
 	
 	@Override
 	public void execute(Scanner sc) throws Exception {
-		// 전체 조회
+		
 		ArrayList<Grade> gradeList = gradeListService.getGradeList();
 		
-		consoleUtil.printGradeList(gradeList);
+		if(gradeList != null) {
+			consoleUtil.printGradeList(gradeList);
+		}
+		else {
+			consoleUtil.printGradeListNotFound();	
 		
-		
-		
+		}
 	}
 	
 }

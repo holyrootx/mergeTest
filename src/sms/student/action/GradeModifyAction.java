@@ -4,6 +4,7 @@ import java.util.Scanner;
 import sms.student.svc.GradeModifyService;
 import sms.student.util.ConsoleUtil;
 import sms.student.vo.Grade;
+import sms.student.vo.Student;
 
 public class GradeModifyAction implements Action {
 
@@ -11,27 +12,27 @@ public class GradeModifyAction implements Action {
 	GradeModifyService gradeModifyService =	new GradeModifyService();
 
 	@Override
-	public void execute(Scanner sc) throws Exception {		
-		int student_no = consoleUtil.getStudent_no("성적을 수정할 ", sc);
-		// �й� �޾Ƽ� getModifyStudent ����
-		Grade newGrade = gradeModifyService.getModifyGrade(student_no);
- 
-		if(newGrade == null) {
-			// �ش��ϴ� �л��� ���ٸ�
-			consoleUtil.printStudentNotFound(student_no);
+	public void execute(Scanner sc) throws Exception {	
+		
+		int stu_no = consoleUtil.getStudent_no("���� ", sc);
+		Grade modifyGrade = gradeModifyService.getModifyGrade(stu_no);
+		
+		if (modifyGrade == null) {
+			consoleUtil.printStudentNotFound(stu_no);
 			return;
 		}
-		// ������ �״�� ����
-		// 
-		newGrade = consoleUtil.getChangeGrade(newGrade,sc);
-		boolean isModifySuccess = gradeModifyService.modifyGrade(newGrade);
 		
-		if(isModifySuccess) {
-			consoleUtil.printModifySuccess(newGrade);
-		}else {
-			consoleUtil.printModifyFail(newGrade);
-		}	
+		Grade changeGrade = consoleUtil.getChangeGrade(modifyGrade, sc);
+		boolean isModifySuccess = gradeModifyService.modifyGrade(changeGrade);
 		
+		if (isModifySuccess) {
+			consoleUtil.printModifySuccess(stu_no);
+		} else {
+			consoleUtil.printModifyFail(stu_no);
+		} 
 	}
-	
+		
+		
+
 }
+

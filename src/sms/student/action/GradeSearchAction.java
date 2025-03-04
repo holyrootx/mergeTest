@@ -8,65 +8,40 @@ import sms.student.util.ConsoleUtil;
 import sms.student.vo.Grade;
 
 public class GradeSearchAction implements Action {
+    ConsoleUtil consoleUtil = new ConsoleUtil();
+    GradeSearchService gradeSearchService = new GradeSearchService();
 
-	ConsoleUtil consoleUtil = new ConsoleUtil();
-	GradeSearchService gradeSearchService = new GradeSearchService();
+    @Override
+    public void execute(Scanner sc) throws Exception {
+        int searchMenuNum = consoleUtil.getSearchMenuNum(sc);
+        ArrayList<Grade> searchGradeList = null;
 
-	@Override
-	public void execute(Scanner sc) throws Exception {
-		// getStudentList()
-		ArrayList<Grade> searchGradeList = new ArrayList<>();
-		int selectService = consoleUtil.getSearchGradeMenuNum(sc);
-				
-		if(selectService == 1) {
-			// Ïù¥Î¶Ñ
-			String student_name = consoleUtil.getStudent_name("Ï°∞ÌöåÌï† ", sc);
-			
-			searchGradeList = gradeSearchService.getSearchGradeListByStudent_name(student_name);
-			
-			if(searchGradeList.size() == 0) {
-				consoleUtil.printSearchGradeListNotFound();
-				
-			} else {
-				consoleUtil.printGradeList(searchGradeList);
-			}
-			
-		} else if(selectService == 2) {
-			//ÌïôÎ≤à
-			int student_no = consoleUtil.getStudent_no("Ï°∞ÌöåÌï† ",sc);
-			
-			searchGradeList = gradeSearchService.getSearchGradeListByStudent_no(student_no);
-			
-			if(searchGradeList.size() == 0) {
-				consoleUtil.printSearchGradeListNotFound();
-			} else {
-				consoleUtil.printGradeList(searchGradeList);
-			}
-			
-		} else if(selectService == 3) {
-			//ÌïôÎÖÑ
-			int student_year = consoleUtil.getGrade("Ï°∞ÌöåÌï† ",sc);
-			searchGradeList = gradeSearchService.getSearchGradeListByStudent_year(student_year);
-			if(searchGradeList.size() == 0) {
-				consoleUtil.printSearchGradeListNotFound();
-			} else {
-				consoleUtil.printGradeList(searchGradeList);
-			}
-			
-		} else if(selectService == 4){
-			consoleUtil.printSearchGradeCancel();
-			return;
-		} else {
-			consoleUtil.printSearchMenuNumWrong();
-			Action action = new GradeSearchAction();
-			StudentController studentController = new StudentController();
-			studentController.requestProcess(action, sc);
-			return;
-		}
-						 
-		
-		
-		
-	}
-	
+        if (searchMenuNum == 1) {
+            String stu_name = consoleUtil.getStudent_name("∞Àªˆ«“ ", sc);
+            searchGradeList = gradeSearchService.getSearchGradeListByStudent_name(stu_name);
+        } else if (searchMenuNum == 2) {
+            int stu_no = consoleUtil.getStudent_no("∞Àªˆ«“ ", sc);
+            searchGradeList = gradeSearchService.getSearchGradeListByStudent_no(stu_no);
+
+            if (searchGradeList.isEmpty()) {
+                consoleUtil.printGradeNotFound(stu_no);
+                return;
+            }
+        } else if (searchMenuNum == 3) {
+            int student_year = consoleUtil.getGrade("∞Àªˆ«“ ", sc);
+            searchGradeList = gradeSearchService.getSearchGradeListByStudent_year(student_year);
+        } else if (searchMenuNum == 4) {
+            consoleUtil.printSearchGradeCancel();
+            return;
+        } else {
+            consoleUtil.printSearchMenuNumWrong();
+            return;
+        }
+
+        if (searchGradeList != null && !searchGradeList.isEmpty()) {
+            consoleUtil.printGradeList(searchGradeList);
+        } else {
+            consoleUtil.printSearchGradeListNotFound();
+        }
+    }
 }
